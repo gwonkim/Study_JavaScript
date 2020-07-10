@@ -87,7 +87,7 @@ winBalls.forEach((number, index) => {
     }, 1000*(index+1))
 });
 
-const bonusTag = document.querySelector('#bonus');
+const bonusTag = document.querySelector('.bonus');
 setTimeout( () => {
     const bonusBall = document.createElement('div');
     bonusBall.className = 'ball';

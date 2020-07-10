@@ -35,8 +35,8 @@ winBalls.forEach((number, index) => {
         resultTag.appendChild(ball);
     }, 1000*(index+1))
 });
-
-const bonusTag = document.querySelector('#bonus');
+//class와 id 주의
+const bonusTag = document.querySelector('.bonus');
 setTimeout(() => {
     const bonusBall = document.createElement('div');
     bonusBall.className = 'ball';
@@ -44,7 +44,3 @@ setTimeout(() => {
     bonusBall.textContent = bonus;
     bonusTag.appendChild(bonusBall);
 }, 7000);
-
-// 7월 10일에 할 것
-//index2.js:45 Uncaught TypeError: Cannot read property 'appendChild' of null
-//이 문제 해결하기 
