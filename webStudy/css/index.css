@@ -1,0 +1,52 @@
+
+.flexbox{
+    position: absolute;
+    top : 0;
+    left : 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    /* column -reverse */
+
+    /* start end center space- */
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 10px;
+
+
+    background-color: aquamarine;
+}
+
+.element {
+    width : 200px;
+    height : 200px;
+
+    background-color: rgba(52,73,94,0.3);
+    backdrop-filter: blur(12px);
+    /* font-size: 50px; */
+
+    display: grid;
+    grid-template: 
+    "something title" 2fr
+    "something summary" 1fr / 1fr 1fr;
+    gap : 10px;
+
+    box-shadow: 0 3px 6px rgba(243, 206, 206, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+    
+}
+
+.something {
+    grid-area: something;
+}
+
+.title {
+    grid-area: title;
+}
+
+.summary {
+    grid-area : summary
+}
