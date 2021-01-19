@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+
+.nav {
+    width: 80vw;
+    height: 120px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color : white;
+    padding: 0px 12%;
+    position: fixed;
+    transition: backgrond-color 500ms, color 1000ms 1000ms;
+    background-color:  rebeccapurple;
+}
+
+.scrolledNav {
+    opacity: 0.4;
+    background-color: rgba(9, 132, 277, 0.2);
+    color : black;
+    box-shadow: 0 3px 6px rgba(148, 134, 134, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.temp {
+    height: 2000vh;
+}
+
+.nav__element {
+    width: 30%;
+    justify-content: space-evenly;
+    display: fixed;
+}
+
+.timeBox {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeBox__time {
+    font-size: 5rem;
+}
+
