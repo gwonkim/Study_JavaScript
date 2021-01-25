@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>SIGNUP</title>
@@ -25,24 +26,31 @@
             <hr />
         </div>
         <div class="contents__signup">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <form class=form>
+                <div class="box">
+                    <label><b>Username</b></label>
+                    <input class="username js-username" type="text" placeholder="Enter Email">
+                    <h3 class="username__text"></h3>
+                </div>
 
-            <label><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+                <label><b>Email</b></label>
+                <input class="email js-email" type="text" placeholder="Enter Email">
+                <h3 class="email__text"></h3>
 
+                <label><b>Password</b></label>
+                    <input class="password1 js-paseeword1" type="password" placeholder="Enter Password">
+                    <h3 class="password1__text"></h3>
 
-            <labelb><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label><b>Confirm Password</b></label>
+                    <input class="password2 js-password2" type="password" placeholder="Enter password again">
+                    <h3 class="password2__text"></h3>
 
-
-            <label for="repeat"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Enter password again" name="confirm-password" required>
-
-            <button type="submit" class="signupButton">Submit</button>
+                    <button class="signupButton js-signupButton">Submit</button>
+            </form>
         </div>
     </div>
-    <script src="index.js"></script>
-    <script src="nav.js"></script>
+    <script src="check.js"></script>
 </body>
+
+
 </html>
