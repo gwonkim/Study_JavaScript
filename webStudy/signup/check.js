@@ -1,71 +1,60 @@
-const form = document.querySelector(".form");
+const form = document.querySelector(".js-form");
+
+const username = document.querySelector(".js-username");
+const username__text = document.querySelector(".username__text");
+const email = document.querySelector(".js-email");
+const email__text = document.querySelector(".email__text");
+const password1 = document.querySelector(".js-password1");
+const password1__text = document.querySelector(".password1__text");
+const password2 = document.querySelector(".js-password2");
+const password2__text = document.querySelector(".password2__text");
+
+/* error message */
+const idMessage = "Password must be at least 2 characters";
+const emailMessage = "Email is not valid.";
+const password1Message = "Password must be at least 6 characters.";
+const password2Message = "Passwords do not match.";
+
+/* 정규식 */
+const idRegExp = /^[a-zA-Z0-9]{2,}$/;
+const emailRegExp = /^[a-zA-Z0-9]*[@]{1}[a-zA-Z0-9]*[.]{1}[a-zA-Z0-9]{2,}$/;
+const passwordRegExp = /^[a-zA-Z0-9]{6,}$/;
 
 const CHECKTRUE_CN = "checkTrue";
 const CHECKFALSE_CN = "checkFalse";
 
 const check = (regExp, checkText, message, messageTag) => {
-  const reg = new RegExp(regExp);
-  while (reg.test(checkText)) {
+  checkText.value.replace(/(\s*)/g,"");
+  if (!regExp.test(checkText.value)) { //false
+    checkText.classList.add(CHECKFALSE_CN);
+    checkText.classList.remove(CHECKTRUE_CN);
     messageTag.innerText = message;
-    checkText.classList.toggle(CHECKFALSE_CN);
-  }
-  if (reg.test(checkText)) {
-    checkText.classList.toggle(CHECKTRUE_CN);
-    messageTag.innerText = "성공";
-    return true;
+  } else { //true
+    checkText.classList.add(CHECKTRUE_CN);
+    checkText.classList.remove(CHECKFALSE_CN);
+    messageTag.innerText = '';
   }
 };
 
-const checkUserId = () => {
-  const username = document.querySelector(".js-username");
-  const username__text = document.querySelector(".username__text");
-  const idRegExp = "/[a-zA-Z0-9]/";
-  const message = "Please enter.";
-
-  check(idRegExp, username, message, username__text);
-};
-
-const checkEmail = () => {
-  const email = document.querySelector(".js-email");
-  const email__text = document.querySelector(".email__text");
-  const emailRegExp = "/[@]{1}*[.]{1}/";
-  const message = "Email is not valid.";
-
-  check(emailRegExp, email, message, email__text);
-};
-
-const checkPassword = () => {
-  const password1 = document.querySelector(".js-password1");
-  const password1__text = document.querySelector(".password1__text");
-  const passwordRegExp = "/[a-zA-z0-9]{6,}/";
-  const message = "Password must be at least 6 characters.";
-
-  check(passwordRegExp, password1, message, password1__text);
-};
-
-const checkConfirmPassword = () => {
-  const password1 = document.querySelector(".js-password1");
-  const password2 = document.querySelector(".js-password2");
-  const password2__text = document.querySelector(".password2__text");
-
-  if (password1 !== password2) {
-    password2__text.innerHTML = "Passwords do not match.";
-    password2.classList.toggle(CHECKFALSE_CN);
+const handleCheck = event => {
+  event.preventDefault();
+  check(idRegExp, username, idMessage, username__text);
+  check(emailRegExp, email, emailMessage, email__text);
+  check(passwordRegExp, password1, password1Message, password1__text);
+  password2.value.replace(/\s/gi,"");
+  
+  if (password1.value !== password2.value || password2.value === '') { //false
+    password2.classList.add(CHECKFALSE_CN);
+    password2.classList.remove(CHECKTRUE_CN);
+    password2__text.innerHTML = password2Message;
+  } else { //true
+    password2.classList.add(CHECKTRUE_CN);
+    password2.classList.remove(CHECKFALSE_CN);
   }
-  password1.classList.toggle(CHECKTRUE_CN);
 };
-
-const handleCheck = () => {
-  checkUserId();
-  checkEmail();
-  checkPassword();
-  checkConfirmPassword();
-};
-const signButton = document.querySelector(".js-signButton");
 
 const init = () => {
-    signButton.addEventListener("click", handleCheck);
-
+  form.addEventListener("submit", handleCheck);
 };
 
 init();

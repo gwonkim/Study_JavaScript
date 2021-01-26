@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>SIGNUP</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
     <!-- navigationBar -->
     <div class="nav js-nav">
@@ -25,32 +23,34 @@
             <h1>SIGNUP</h1>
             <hr />
         </div>
-        <div class="contents__signup">
-            <form class=form>
-                <div class="box">
-                    <label><b>Username</b></label>
-                    <input class="username js-username" type="text" placeholder="Enter Email">
-                    <h3 class="username__text"></h3>
-                </div>
+        <form class="contents__signup js-form">
+            <div class="box">
+                <label><b>Username</b></label>
+                <input class="username js-username" type="text" placeholder="Enter Email">
+                <h5 class="username__text"></h5>
+            </div>
 
+            <div class="box">
                 <label><b>Email</b></label>
                 <input class="email js-email" type="text" placeholder="Enter Email">
-                <h3 class="email__text"></h3>
+                <h5 class="email__text"></h5>
+            </div>
 
+            <div class="box">
                 <label><b>Password</b></label>
-                    <input class="password1 js-paseeword1" type="password" placeholder="Enter Password">
-                    <h3 class="password1__text"></h3>
+                <input class="password1 js-password1" type="text" placeholder="Enter Password">
+                <h5 class="password1__text"></h5>
+            </div>
 
-                    <label><b>Confirm Password</b></label>
-                    <input class="password2 js-password2" type="password" placeholder="Enter password again">
-                    <h3 class="password2__text"></h3>
+            <div class="box">
+                <label><b>Confirm Password</b></label>
+                <input class="password2 js-password2" type="text" placeholder="Enter password again">
+                <h5 class="password2__text"></h5>
+            </div>
 
-                    <button class="signupButton js-signupButton">Submit</button>
-            </form>
-        </div>
+            <button class="signupButton js-signupButton" type="submit">Submit</button>
+        </form>
     </div>
     <script src="check.js"></script>
 </body>
-
-
 </html>
