@@ -14,7 +14,7 @@ const EVEN_CN = "even";
 
 const checkEven = (number) => {
     title.classList.toggle(EVEN_CN);
-//toggle 클래스 네임이 있으면 removw 없으면 add;
+//toggle 클래스 네임이 있으면 remove 없으면 add;
    /*  if (number % 2 == 0){
         title.classList.add(EVEN_CN);
     } else {
