@@ -1,0 +1,17 @@
+.counter {
+    position: absolute;
+    width: 50vw;
+    height: 40vh;
+
+    background-color: cadetblue;
+}
+
+.even {
+    font-size: 100px;
+    color: crimson;
+}
+
+.notEven {
+    font-size: 100px;
+    color: blue;
+}
