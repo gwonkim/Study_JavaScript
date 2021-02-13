@@ -1,0 +1,24 @@
+.nav {
+    width: 100vw;
+    height: 210px;
+    padding: 5vw;
+    background-size: 80vw;
+    background-image: url(./ticket.jpg);
+}
+
+.nav__text{
+    width: 70vw;
+    max-width: 580px;
+    min-width: 380px;
+    border-top-right-radius : 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 15px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.nav__title{
+    font-family: Kaushan Script;
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: bold;
+}
