@@ -1,5 +1,5 @@
 .movies {
-    margin: 50px 20px  0 20px;
+    margin: 50px 20px 0 20px;
     background-color: rgba(88, 88, 88, 0.5);
     height: 250px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
@@ -16,8 +16,8 @@
  .movies__textBox{
     margin: 10px;
     padding: auto;
-     width: 300px;
-     color: #fff;
+    width: 300px;
+    color: #fff;
     overflow: auto;
  }
 
@@ -31,11 +31,11 @@
  }
 
  .movies__rating {
-   margin-right: 10px;
+    margin-right: 10px;
  }
 
  .movies__runtime {
-   margin-right: 10px;
+    margin-right: 10px;
  }
  
  .movies__summary {
