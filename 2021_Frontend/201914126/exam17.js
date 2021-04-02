@@ -1,8 +1,8 @@
 function doSomething(a) {
-    let b = a.slice(0);
+    /* let b = a.slice(0);
     b.splice(0, 1);
-    b.splice(-1, 1);
-    return  b;
+    b.splice(-1, 1); */
+    return  a.slice(1, -1);
 }
 
 let a1 = [3, 4, 5, 6];
