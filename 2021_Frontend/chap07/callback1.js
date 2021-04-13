@@ -9,3 +9,4 @@ let obj = {
   
   obj.startTimer();
   
+  // 문제 발생!
