@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { margin: 20px auto; padding: 20px; width: 300px;
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa; }
+    p { font-size: 15pt; color: blue; }
+    input { width: 30px; height: 30px;  }
+  </style>
+</head>
+<body>
+  <div id="app">
+      <h1>checkbox</h1>
+      <p>{{ value }}</p>
+      <hr />
+      <input type="checkbox" v-model="value" />
+      <input type="checkbox" v-model="value" />
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        value: false
+      }
+    })
+   </script>
+</body>
+</html>

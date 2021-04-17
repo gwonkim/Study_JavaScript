@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    body { padding: 20px; }
+    input { padding: 5px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <p>{{ body }}</p>
+    <hr />
+    <input type="text" v-model="title" /> <br />
+    <input type="text" v-model="body" /> <br />
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        title: '안녕하세요',
+        body: '좋은 아침입니다.'
+      }
+    })
+   </script>
+</body>
+</html>
