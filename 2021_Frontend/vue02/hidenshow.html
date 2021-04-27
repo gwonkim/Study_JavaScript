@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px #aaa;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        div.buttons {
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 0.5em 2em;
+        }
+
+        .yellowBox {
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+            background-color: #ff8;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>보이기 감추기</h1>
+        <hr />
+        <div class="buttons">
+            <button type="button" @click="visible = true" :disabled="visible">보이기</button>
+            <button type="button" @click="visible = false" :disabled="!visible">감추기</button>
+        </div>
+        <div v-show="visible" class="yellowBox"></div>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                visible: false,
+            },
+        })
+    </script>
+</body>
+
+</html>

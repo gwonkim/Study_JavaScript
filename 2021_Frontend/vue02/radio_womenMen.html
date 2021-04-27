@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app {
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      border: 1px solid gray;
+      box-shadow: 5px 5px 5px #aaa;
+    }
+
+    p {
+      font-size: 15pt;
+      color: blue;
+    }
+
+    input {
+      width: 30px;
+      height: 30px;
+    }
+
+    .green { background-color: #afa; }
+    .red { background-color: #faa; }
+
+  </style>
+</head>
+
+<body>
+  <div id="app" v-bind:style="{ background: color() }">
+    <h1>radio</h1>
+    <hr />
+    <label>
+      <input type="radio" v-model="sex" value="남자" />남자
+    </label>
+    <label>
+      <input type="radio" v-model="sex" value="여자" />여자
+    </label>
+    <h1>{{ sex }}</h1>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        sex: '',
+      },
+      methods: {
+        color() {
+          if (this.sex == '남자') return '#eef';
+          else if (this.sex == '여자') return '#fee';
+          return '#fff';
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
