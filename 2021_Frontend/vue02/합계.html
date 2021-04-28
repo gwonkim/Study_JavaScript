@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        div#app div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type=text] {
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>합계</h1>
+        <div>
+            <label>from</label>
+            <input type="text" v-model="from" />
+        </div>
+        <div>
+            <label>to</label>
+            <input type="text" v-model="to" />
+        </div>
+        <hr />
+        <div>
+            {{ total() }}
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                from: 0,
+                to: 0,
+            },
+            methods: {
+                total() {
+                    let t=0;
+                    for(let i=this.from; i>=this.to; i++){
+                        t+=i;
+                    }
+                    return t;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
