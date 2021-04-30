@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px #aaa;
+        }
+
+        p {
+            font-size: 15pt;
+            color: blue;
+        }
+
+        select {
+            width: 70px;
+            height: 30px;
+        }
+
+        div#hello {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: lightGreen;
+            border: 1px solid gray;
+            text-align: center;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-model="visiable">
+        <h1>select</h1>
+        <p>{{ visiable }}</p>
+        <hr />
+        <select v-model="visiable">
+            <option :value="false">감추기</option>
+            <option :value="true">보이기</option>
+        </select>
+        <div id="hello" v-if="visiable" v-bind:class="{ green: value }">Hello Vue.js</div>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                value: false,
+                visiable: false,
+            }
+        })
+    </script>
+</body>
+
+</html>

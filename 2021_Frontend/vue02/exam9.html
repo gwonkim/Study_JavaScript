@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px #aaa;
+        }
+
+        .green {
+            background-color: #bfb;
+        }
+
+        .red {
+            background-color: #fbb;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 15pt;
+            width: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-model="color" v-bind:class="{ green: number%2 === 0, red: number%2 !== 0 }">
+        <h1>{{ number%2 === 0 ? "짝수" : "홀수"}}</h1>
+        <p>{{ number }}</p>
+        <hr>
+        <input type="text" v-model="number">
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                color: "#bfb",
+                number: 0,
+            }
+        })
+    </script>
+</body>
+
+</html>
