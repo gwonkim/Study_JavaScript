@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { margin: 20px auto; padding: 20px; width: 300px;
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa;
+          transition: font-size 1s; }
+    select { padding: 5px; font-size: 15pt; width: 150px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+      <p v-bind:style="{ fontSize: f }">hello</p>
+      <select v-model="f">
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+      </select>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        f: 10
+      }
+    })
+   </script>
+</body>
+</html>
