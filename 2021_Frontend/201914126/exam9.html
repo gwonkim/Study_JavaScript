@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { margin: 20px auto; padding: 20px; width: 300px;
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa;
+           }
+    select { padding: 5px; font-size: 15pt; width: 150px; margin: 10px; }
+    .yellow { background-color: #ffa; }
+    .green { background-color: #afa; }
+    .red { background-color: #faa; }
+  </style>
+</head>
+<body>
+  <div id="app" v-model="color"  v-bind:style="{ backgroundColor: color}">
+      <h1>buttons</h1>
+      <div>
+        <button type="button" v-model="color" value="#ffa" @click="colors">yellow</button>
+        <button type="button" v-model="color" value="#bfb" @click="colors">green</button>
+        <button type="button" v-model="color" value="#fbb" @click="colors">red</button>
+      </div>
+      <h1>{{ color }}</h1>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        color: "#ffa",
+      },
+      methods: {
+        colors() {
+          if (this.color == '#ffa') return '#ffa';
+          else if (this.color == '#bfb') return '#bfb';
+          else if (this.color == '#fbb') return '#fbb';
+        }
+      }
+    })
+   </script>
+</body>
+</html>
