@@ -4,35 +4,26 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <style>
     div#app { margin: 20px auto; padding: 20px; width: 300px;
-          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa;
-           }
-    select { padding: 5px; font-size: 15pt; width: 150px; margin: 10px; }
-    .yellow { background-color: #ffa; }
-    .green { background-color: #afa; }
-    .red { background-color: #faa; }
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa; }
+    button { padding: 0.5em 1em; font-size: 12  pt; }
   </style>
 </head>
 <body>
-  <div id="app" v-model="color"  v-bind:style="{ backgroundColor: color}">
+  <div id="app" v-bind:style="{ backgroundColor: color }">
       <h1>buttons</h1>
-      <div>
-        <button type="button" v-model="color" value="#ffa" @click="colors">yellow</button>
-        <button type="button" v-model="color" value="#bfb" @click="colors">green</button>
-        <button type="button" v-model="color" value="#fbb" @click="colors">red</button>
-      </div>
-      <h1>{{ color }}</h1>
+      <button type="button" v-on:click="setColor('#ffa')">yellow</button>
+      <button type="button" v-on:click="setColor('#bfb')">green</button>
+      <button type="button" v-on:click="setColor('#fbb')">red</button>
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        color: "#ffa",
+        color: "#ffa"
       },
       methods: {
-        colors() {
-          if (this.color == '#ffa') return '#ffa';
-          else if (this.color == '#bfb') return '#bfb';
-          else if (this.color == '#fbb') return '#fbb';
+        setColor(color) {
+          this.color = color;
         }
       }
     })
