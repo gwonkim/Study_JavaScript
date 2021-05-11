@@ -1,0 +1,38 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 200px; text-align: center;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    button { padding: 0.5em 2em; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ a }}</h1>
+    <button type="button" v-on:click="increase">++</button>
+    <button type="button" v-on:click="decrease">--</button>
+  </div>
+
+  <!-- 이건 화면 감지함  -->
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        a : [0, 1, 2]
+      },
+      methods: {
+        increase() {
+          let i = this.a[0];
+          Vue.set(this.a, 0, i + 1);
+        },
+        decrease() {
+          let i = this.a[0];
+          Vue.set(this.a, 0, i - 1);
+        }
+      }
+    })
+   </script>
+</body>
+</html>
