@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 400px;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    input[type=checkbox] { width: 20px; height: 20px; margin-right: 20px; }
+    button { padding: 0.5em 1.5em; }
+  </style>
+</head>
+
+<!-- 부모에게 이벤트 전달 됨 -->
+<body>
+  <div id="app" v-on:click="hello('div')">
+    <input type="checkbox" v-model="value" />
+    <button type="button" v-on:click="hello('button')">버튼</button>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        value: false
+      },
+      methods: {
+        hello(who) {
+          alert(who + " is clicked");
+        }
+      }
+    })
+   </script>
+</body>
+</html>
