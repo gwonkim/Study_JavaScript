@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 300px; text-align: center;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#time { font-size: 25pt; padding: 5px; margin: 0px auto; background: #ccc;
+      width: 200px; border: 1px solid black; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>현재시각</h1>
+    <div id="time">{{ time }}</div>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        time: moment().format("HH:mm:ss")
+      },
+      mounted: function() {
+        let callback = () => this.time = moment().format("HH:mm:ss")
+        setInterval(callback, 1000);
+      }
+    })
+   </script>
+</body>
+</html>
+
