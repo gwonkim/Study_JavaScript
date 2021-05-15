@@ -1,0 +1,73 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" ></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 300px; text-align: center;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#timer { font-size: 25pt; padding: 5px; margin: 0px auto; background: #ccc;
+      width: 200px; border: 1px solid black; }
+    input[type=text] { font-size: 15pt; padding: 5px; width: 50px; text-align: center; }
+    button { padding: 0.5em 2em; margin: 30px 5px 0px 5px; font-size: 12pt; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>타이머</h1>
+    <div>
+      <input type="text" v-model="h" /> :
+      <input type="text" v-model="m" /> :
+      <input type="text" v-model="s" />
+    </div>
+    <button type="button" v-on:click="start" v-bind:disabled="running">시작</button>
+    <button type="button" v-on:click="stop" v-bind:disabled="!running">정지</button>
+  </div>
+
+  <script type="text/javascript">
+    var audio = new Audio();
+    audio.src = "ding-dong.mp3";
+    var app = new Vue({
+      el: '#app',
+      data: {
+        h : "00",
+        m : "00",
+        s : "00",
+        stopTime: null,
+        running: false
+      },
+      methods: {
+        start() {
+          let stopTime = moment();
+          stopTime.add(this.h, "hours");
+          stopTime.add(this.m, "minutes");
+          stopTime.add(this.s, "seconds");
+          stopTime.add(900, "milliseconds");
+          this.stopTime = stopTime;
+
+          let callback = () => {
+            let time_diff = this.stopTime.diff(moment());
+            if (time_diff < 0) time_diff = 0;
+            this.h = moment.utc(time_diff).format("HH");
+            this.m = moment.utc(time_diff).format("mm");
+            this.s = moment.utc(time_diff).format("ss");
+            if (time_diff == 0) {
+              clearInterval(this.timerId);
+              this.running = false;
+              audio.play();
+            }
+          };
+
+          this.timerId = setInterval(callback, 200);
+          this.running = true;
+        },
+        stop() {
+          clearInterval(this.timerId);
+          this.running = false;
+        }
+      }
+    })
+   </script>
+</body>
+</html>
+

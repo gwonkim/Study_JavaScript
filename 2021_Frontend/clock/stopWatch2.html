@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" ></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 300px; text-align: center;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#timer { font-size: 25pt; padding: 5px; margin: 0px auto; background: #ccc;
+      width: 200px; border: 1px solid black; }
+    button { padding: 0.5em 2em; margin: 30px 5px 0px 5px; font-size: 12pt; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>스톱워치</h1>
+    <div id="timer">{{ time }}</div>
+    <button type="button" v-on:click="start" v-bind:disabled="running">시작</button>
+    <button type="button" v-on:click="stop" v-bind:disabled="!running">정지</button>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        time: '00:00:00 0',
+        startTime: null,
+        running: false
+      },
+      methods: {
+        start() {
+          this.startTime = moment();
+          let callback = () => {
+            let time_diff = moment().diff(this.startTime);
+            this.time = moment.utc(time_diff).format("HH:mm:ss S");
+          };
+          this.running = true;
+          this.timerId = setInterval(callback, 100);
+        },
+        stop() {
+          clearInterval(this.timerId);
+          this.running = false;
+        }
+      }
+    })
+   </script>
+</body>
+</html>
+
