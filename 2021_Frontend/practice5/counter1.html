@@ -1,0 +1,48 @@
+<!-- 
+문제
+처음 실행했을 숫자 0 이 출력된다.
+1초 마다 숫자가 1씩 증가한다.
+숫자가 10 이 되면 1씩 증가 기능이 종료된다.
+
++ 종료시 오디오 추가 
+ -->
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 200px; text-align: center;
+      border: 1px solid #ccc; }
+    button { width: 200px; height: 50px; background-color: #ddd; font-size: 30px;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>counter1</h2>
+    <div class="count">{{ count }}</div>
+  </div>
+
+  <script type="text/javascript">
+  var audio = new Audio();
+    audio.src = "ding-dong.mp3";
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        count : 0
+      },
+      mounted() {
+        let callback = () => {
+            this.count++;
+            if (this.count >= 10) {
+              clearInterval(this.timerId);
+              audio.play();
+            }
+        }
+        this.timerId = setInterval(callback, 1000);
+      }
+    })
+   </script>
+</body>
+</html>
