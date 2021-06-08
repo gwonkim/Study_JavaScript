@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.22.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "vue-router": "^3.5.1"
   }
 }
