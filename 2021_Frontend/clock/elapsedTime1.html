@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" ></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; width: 300px; text-align: center;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
+    div#time { font-size: 25pt; padding: 5px; margin: 0px auto; background: #ccc;
+      width: 200px; border: 1px solid black; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div>{{ startTime }}</div>
+    <h1>연초부터</h1>
+    <div>{{ d }} 일</div>
+    <div>{{ h }} 시</div>
+    <div>{{ m }} 분</div>
+    <div>{{ s }} 초</div>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        d: 0,
+        h: 0,
+        m: 0,
+        s: 0
+      },
+      mounted: function() {
+        this.startTime = moment("2021-01-01 00:00:00");
+        let callback = () => {
+          let time_diff = moment().diff(this.startTime);
+          /* this.d = moment.duration(time_diff).asDays();
+          this.h = moment.duration(time_diff).asHours();
+          this.m = moment.duration(time_diff).asMinutes();
+          this.s = moment.duration(time_diff).asSeconds(); */
+          this.d = Math.floor(moment.duration(time_diff).asDays());
+          this.h = Math.floor(moment.duration(time_diff).asHours());
+          this.m = Math.floor(moment.duration(time_diff).asMinutes());
+          this.s = Math.floor(moment.duration(time_diff).asSeconds());
+        }
+        callback();
+        setInterval(callback, 1000);
+      }
+    })
+   </script>
+</body>
+</html>
