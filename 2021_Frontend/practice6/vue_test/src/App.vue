@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <h1>router</h1>
+    <h1>페이지</h1>
+          <router-link to="/page">페이지</router-link><br/>
+      <router-link to="/gugudan">구구단</router-link><br/>
+      <router-link to="/clickBox">클릭박스1초</router-link><br/>
+      <router-link to="/radioColorBox">라디오박스</router-link><br/>
+      <br />
+      
     <div class="menu">
       <router-link to="/">홈</router-link>
-      <router-link to="/page">공지사항</router-link>
+      <router-link to="/page">페이지</router-link>
+      <router-link to="/gugudan">구구단</router-link>
+      <router-link to="/clickBox">클릭박스1초</router-link>
+      <router-link to="/radioColorBox">라디오박스</router-link>
     </div>
     <router-view class="view"></router-view>
   </div>
@@ -13,11 +22,19 @@
 import VueRouter from 'vue-router'
 import Home from './Home.vue'
 import Page from './Page.vue'
+import Gugudan from './Gugudan.vue'
+import ClickBox from './ClickBox.vue'
+import RadioColorBox from './RadioColorBox.vue'
 
 var router = new VueRouter({
   routes: [
     { path: '/', component: Home },
+/*     { path: '/notice', component: Notice },
+    { path: '/todo', component: Todo }, */
     { path: '/page', component: Page },
+    { path: '/gugudan', component: Gugudan },
+    { path: '/clickBox', component: ClickBox },
+    { path: '/radioColorBox', component: RadioColorBox },
   ]
 })
 
