@@ -1,0 +1,57 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 30px; margin: 30px auto; max-width: 600px;
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa;  }
+    span { display: inline-block; margin: 0px 5px 15px 0px; padding: 8px 15px;
+      border: 1px solid black; }
+    span:hover { cursor: pointer; background-color: #ddd; }
+    input { padding: 5px; }
+    button { padding: 0.3em 1em; }
+    table { border-collapse: collapse; width: 400px; }
+    td { padding: 5px; border: 1px solid #aaa;  text-align: center; }
+    tr:nth-child(1) { background-color: #ddd; }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+      <h1>목록</h1>
+    <table>
+        <tr>
+            <td>번호</td><td>값</td>
+        </tr>
+        <tr v-if="values.length <= 0">
+            <td colspan="2">값이 없습니다.</td>
+        </tr>
+        <tr v-for="value in values" v-bind:key="value.id">
+          <td>{{ value.id }}</td>
+          <td>{{ value.value }}</td>
+        </tr>
+      </table>
+      <div>
+        <br />
+      <input type="text" v-model="value" />
+      <button type="button" v-on:click="add">추가</button>
+  </div>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        values: [ ],
+        value : ''
+      },
+      methods: {
+        add() {
+          this.values.push({id : this.values.length +1, value : this.value});
+          this.value = '';
+        }
+      }
+    })
+   </script>
+</body>
+</html>

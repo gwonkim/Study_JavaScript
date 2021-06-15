@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        div#app div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type=text] {
+            padding: 4px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100px;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #aaa;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>2차원 배열</h1>
+        <table>
+            <tr v-for="(r, index1) in matrix" v-bind:key="index1">
+                <td v-for="(v, index2) in r" v-bind:key="index2">
+                    {{ v }}
+                </td>
+            </tr>
+        </table>
+
+        <br />
+        <div>
+            <label>행: <input type="text" v-model.number="row" />
+            </label>
+        </div>
+        <div>
+            <label>열: <input type="text" v-model.number="col" /></label>
+
+        </div>
+        <div>
+            <label>
+                값: <input type="text" v-model="value" />
+                <button type="button" v-on:click="add">대입</button>
+            </label>
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                row: 0,
+                col: 0,
+                value: 0,
+                matrix: [],
+                size: 4,
+            },
+            created() {
+                for (let r = 0; r < this.size; ++r) {
+                    this.matrix[r] = [];
+                    for (let c = 0; c < this.size; ++c)
+                        this.matrix[r][c] = r * this.size + c;
+                }
+            },
+            methods: {
+                add() {
+                    this.matrix[this.row][this.col] = this.value;
+                    this.$forceUpdate();
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

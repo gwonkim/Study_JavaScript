@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <h1>페이지</h1>
-          <router-link to="/page">페이지</router-link><br/>
-      <router-link to="/gugudan">구구단</router-link><br/>
-      <router-link to="/clickBox">클릭박스1초</router-link><br/>
-      <router-link to="/radioColorBox">라디오박스</router-link><br/>
+    <h1>프론트엔드 시험공부</h1>
+    <h3>페이지 - 0629시험문제</h3>
+      <router-link to="/page1">페이지1</router-link><br/>
+      <router-link to="/page2">페이지2</router-link><br/>
+      <router-link to="/page3">페이지3</router-link><br/>
+      <router-link to="/page4">페이지4</router-link><br/>
+      <router-link to="/page5">페이지5</router-link><br/>
       <br />
       
     <div class="menu">
@@ -22,6 +24,11 @@
 import VueRouter from 'vue-router'
 import Home from './Home.vue'
 import Page from './Page.vue'
+import Page1 from './Page1.vue'
+import Page2 from './Page2.vue'
+import Page3 from './Page3.vue'
+import Page4 from './Page4.vue'
+import Page5 from './Page5.vue'
 import Gugudan from './Gugudan.vue'
 import ClickBox from './ClickBox.vue'
 import RadioColorBox from './RadioColorBox.vue'
@@ -32,6 +39,11 @@ var router = new VueRouter({
 /*     { path: '/notice', component: Notice },
     { path: '/todo', component: Todo }, */
     { path: '/page', component: Page },
+    { path: '/page1', component: Page1 },
+    { path: '/page2', component: Page2 },
+    { path: '/page3', component: Page3 },
+    { path: '/page4', component: Page4 },
+    { path: '/page5', component: Page5 },
     { path: '/gugudan', component: Gugudan },
     { path: '/clickBox', component: ClickBox },
     { path: '/radioColorBox', component: RadioColorBox },
