@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     body { font-size: 11pt; }
     div#app { margin: 30px auto; max-width: 200px;
       border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; }

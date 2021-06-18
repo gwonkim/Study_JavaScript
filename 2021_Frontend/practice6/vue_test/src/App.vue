@@ -8,6 +8,9 @@
       <router-link to="/page4">페이지4</router-link><br/>
       <router-link to="/page5">페이지5</router-link><br/>
       <br />
+      <router-link to="/노란녹색버튼">노란녹색버튼</router-link><br/>
+      <router-link to="/반대_노란녹색버튼">반대_노란녹색버튼</router-link><br/>
+      <router-link to="/현재시간추가">현재시간추가</router-link><br/>
       
     <div class="menu">
       <router-link to="/">홈</router-link>
@@ -32,6 +35,9 @@ import Page5 from './Page5.vue'
 import Gugudan from './Gugudan.vue'
 import ClickBox from './ClickBox.vue'
 import RadioColorBox from './RadioColorBox.vue'
+import 노란녹색버튼 from './노란녹색버튼.vue'
+import 반대_노란녹색버튼 from './반대_노란녹색버튼.vue'
+import 현재시간추가 from './현재시간추가.vue'
 
 var router = new VueRouter({
   routes: [
@@ -40,13 +46,16 @@ var router = new VueRouter({
     { path: '/todo', component: Todo }, */
     { path: '/page', component: Page },
     { path: '/page1', component: Page1 },
-    { path: '/page2', component: Page2 },
     { path: '/page3', component: Page3 },
+    { path: '/page2', component: Page2 },
     { path: '/page4', component: Page4 },
     { path: '/page5', component: Page5 },
     { path: '/gugudan', component: Gugudan },
     { path: '/clickBox', component: ClickBox },
     { path: '/radioColorBox', component: RadioColorBox },
+    { path: '/노란녹색버튼', component: 노란녹색버튼 },
+    { path: '/반대_노란녹색버튼', component: 반대_노란녹색버튼 },
+    { path: '/현재시간추가', component: 현재시간추가 },
   ]
 })
 

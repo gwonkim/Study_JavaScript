@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     div#app {  margin: 30px auto; 
       border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; }
     table { border-collapse: collapse; margin: 40px auto; background-color: yellowgreen; }
