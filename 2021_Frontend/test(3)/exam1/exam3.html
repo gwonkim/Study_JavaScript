@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        div#app div {
+            margin-bottom: 20px;
+        }
+
+        span {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            border: 1px solid black;
+        }
+
+        span:hover {
+            cursor: pointer;
+            background-color: #ffa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <span v-for="s, i in a" @click="remove(i)">
+            {{ s }}
+        </span>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                a: ['가', '나', '다', '라', '마', '바', '사', '아'],
+            },
+            methods: {
+                remove(i) {
+                    if (confirm('삭제하시겠습니까?')) {
+                        this.a.splice(i, 1);
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

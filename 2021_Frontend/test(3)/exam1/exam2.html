@@ -1,0 +1,80 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <style>
+    div#app {
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 600px;
+      border: 1px solid #ccc;
+      box-shadow: 3px 3px 3px #aaa;
+    }
+
+    input {
+      padding: 5px;
+    }
+
+    button {
+      padding: 0.3em 1em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 200px;
+    }
+
+    td {
+      padding: 5px;
+      border: 1px solid #000;
+    }
+
+    tr:nth-child(1) {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>목록</h1>
+    <table>
+      <tr>
+        <td>시각</td>
+        <td>값</td>
+      </tr>
+      <tr v-if="values.length <= 0">
+        <td colspan="2">자료가 없습니다.</td>
+      </tr>
+      <tr v-for="value in values" v-bind:key="value.id">
+        <td>{{ value.id }}</td>
+        <td>{{ value.value }}</td>
+      </tr>
+    </table>
+    <br />
+    <div>
+      <input type="text" v-model="value" />
+      <button type="button" v-on:click="add">추가</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        values: [],
+        value: '',
+        time: ''
+      },
+      methods: {
+        add() {
+          this.time = moment().format("HH:mm:ss")
+          this.values.push({ id: this.time, value: this.value });
+          this.value = '';
+        }
+      }
+    })
+  </script>
+</body>
+</html>
