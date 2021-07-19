@@ -1,2 +1,11 @@
 /node_modules
 /.next
+/pages/firebase.js
+/pages/firebase-messaging-sw.js
+
+/pages/copy/index copy.js
+/pages/copy/firebase copy.js
+/pages/copy/firebase-messaging-sw copy.js
+
+/public/firebase.js
+/public/firebase-messaging-sw.js
