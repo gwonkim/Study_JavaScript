@@ -1,4 +1,4 @@
 # Study_JavaScript
 
-JavaScript와 react 공부용 
+JavaScript와 react, vue.js 등의 공부용 
 
