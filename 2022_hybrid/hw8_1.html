@@ -1,0 +1,52 @@
+<!-- 
+    학번 : 201914126
+    이름 : 김지원
+    과제명 : hw8_1.html
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+	<div data-role="page" id="page">
+		<div data-role="header" data-position="fixed">
+			<h1>header 영역</h1>
+		</div>
+		<div data-role="content">
+			<input type="password" />
+			<input type="search" name="input" id="input" placeholder="키워드를 입력하세요">
+			<input type="range" name="score" id="score" value="34" min="0" max="100" />
+			<select name="gender" id="gender" data-role="slider">
+				<option value="male">남자</option>
+				<option value="female">여자</option>
+			</select>
+			<fieldset data-role="controlgroup">
+				<legend>연락매체</legend>
+				<input type="checkbox" name="type1" id="type1" value="1" />
+				<label for="type1">e-mail</label>
+				<input type="checkbox" name="type2" id="type2" value="2" checked="checked" />
+				<label for="type2">phone</label>
+			</fieldset>
+			<select name="select" id="select" data-native-menu="false" multiple="multiple">
+				<option value="" data-placeholder="true">복수선택하세요</option>
+				<option value="num1">인터넷</option>
+				<option value="num2">방송</option>
+			</select>
+		</div>
+		<div data-role="footer" data-position="fixed" class="ui-bar">
+			<h1>footer 영역</h1>
+		</div>
+	</div>
+</body>
+
+</html>
