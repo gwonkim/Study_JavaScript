@@ -1,0 +1,42 @@
+<!-- 
+    학번 : 201914126
+    이름 : 김지원
+    과제명 : hw10_1.html
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        body * { margin: 5px; padding: 5px; }	
+    </style>
+    <script>
+		$(document).ready(function () {
+            $('#m').children().each(function(i) {
+                $(this).text('리스트'+(i+1));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul id="m">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+    <ul id="n">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+</body>
+
+</html>
