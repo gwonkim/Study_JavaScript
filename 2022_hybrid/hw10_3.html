@@ -1,0 +1,36 @@
+<!-- 
+    학번 : 201914126
+    이름 : 김지원
+    과제명 : hw10_3.html
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>	
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>jQuery</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        body * { margin: 5px; padding: 5px; }		
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                $('p').css('background-color', 'yellow');
+            }) 
+            $("#btn2").dblclick(function() {
+                $('p').css('background-color', 'purple');
+            }) 
+        });	
+    </script>
+</head>
+<body>
+    <button id="btn1">click</button> 
+    <button id="btn2">dblclick</button>
+    <p>내용</p>
+</body>
+
+</html>
